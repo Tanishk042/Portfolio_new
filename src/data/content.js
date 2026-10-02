@@ -22,6 +22,13 @@ export const navLinks = [
 
 export const heroPills = ['Full-Stack', 'Blockchain / Web3', 'AI / ML']
 
+export const heroKicker = 'Best footballer that didn’t make it — self proclaimed.'
+
+export const heroVideo = {
+  id: 'I5kX0tyj0sM',
+  title: 'Ultra Characters Ink Brush Animation in Dragon Ball Legends',
+}
+
 export const heroStats = [
   profile.location,
   'B.Tech, Electronics & Communication',
