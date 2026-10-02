@@ -15,7 +15,7 @@ export const profile = {
 
 export const navLinks = [
   { label: 'Projects', href: '#featured' },
-  { label: 'Experience', href: '#work' },
+  { label: 'Education', href: '#education' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -37,7 +37,7 @@ export const heroStats = [
 
 export const statement = {
   lead: 'Full-Stack Engineer',
-  rest: 'building React/Node.js products, then extending them with Polygon smart contracts and TensorFlow models.',
+  rest: 'building React/Node.js products, then extending them with Polygon smart contracts and machine-learning models across TensorFlow, scikit-learn and Prophet.',
 }
 
 export const stack = [
@@ -91,32 +91,6 @@ export const projects = [
   },
 ]
 
-export const experience = [
-  {
-    role: 'Frontend Developer',
-    roleNote: '(Intern)',
-    org: 'Path Builder Digital Era Private Limited',
-    meta: 'Prayagraj · Jun 2025 – Jul 2025',
-    bullets: [
-      'Built responsive React interfaces for a Digital Out-of-Home (DOOH) advertising platform.',
-      'Ensured consistent behavior across devices and screen sizes.',
-      'Worked in Agile sprints with code reviews alongside cross-functional engineers.',
-    ],
-  },
-  {
-    role: 'Full-Stack Developer',
-    roleNote: '(Freelance)',
-    org: 'Digilok',
-    meta: 'Remote · Jan 2025 – Mar 2025',
-    bullets: [
-      'Migrated the news platform to a Node.js server for better stability.',
-      'Built a custom CMS, increasing content output by 30%.',
-      'Optimized JavaScript, cutting page load time by 50%.',
-      'Improved SEO and monetization, growing traffic and revenue.',
-    ],
-  },
-]
-
 export const education = [
   {
     role: 'B.Tech, Electronics & Communication Engineering',
@@ -133,9 +107,9 @@ export const about = {
   eyebrow: 'About me',
   startLabel: 'My start',
   start: [
-    "I’m a Full-Stack Engineer, B.Tech in Electronics & Communication, who builds React/Node.js products and extends them with Polygon smart contracts and TensorFlow models.",
+    "I’m a Full-Stack Engineer, B.Tech in Electronics & Communication, who builds React/Node.js products and extends them with Polygon smart contracts and machine-learning models.",
     'I work across the whole stack: React and Next.js on the front, Node.js, Express and FastAPI underneath, MongoDB and SQL for data, and Solidity when a product genuinely needs on-chain logic.',
-    'On the AI/ML side I work in Python with TensorFlow, TensorFlow Lite, scikit-learn, Librosa and Prophet — from forecasting models to lightweight 1D-CNNs that run on low-power devices.',
+    'On the AI/ML side I build across frameworks rather than leaning on just one — scikit-learn and Prophet for forecasting and classification, TensorFlow and TensorFlow Lite for 1D-CNNs that run on low-power devices, with Librosa and SciPy handling the signal processing underneath.',
   ],
   skillsLabel: 'What I do best',
   skills: [
@@ -179,7 +153,6 @@ export const footer = {
   site: [
     { label: 'Home', href: '#top' },
     { label: 'Projects', href: '#featured' },
-    { label: 'Experience', href: '#work' },
     { label: 'Education', href: '#education' },
     { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' },

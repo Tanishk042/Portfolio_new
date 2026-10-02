@@ -44,6 +44,34 @@ export default function HeroVideo({ id, title }) {
 
     let cancelled = false
 
+    const start = (target) => {
+      try {
+        target.mute()
+        target.playVideo()
+      } catch {
+        /* player not ready yet */
+      }
+    }
+
+    // Browsers routinely refuse to autoplay a third-party iframe. If the
+    // player is still idle once the user does anything, start it then.
+    const gestures = ['pointerdown', 'keydown', 'touchstart', 'wheel', 'scroll']
+    const onGesture = () => {
+      const target = playerRef.current
+      if (target?.getPlayerState && target.getPlayerState() === 1) return
+      if (target?.mute && target?.playVideo) {
+        start(target)
+      }
+    }
+    gestures.forEach((event) =>
+      window.addEventListener(event, onGesture, { passive: true }),
+    )
+
+    const retry = setTimeout(() => {
+      const target = playerRef.current
+      if (target?.getPlayerState && target.getPlayerState() !== 1) start(target)
+    }, 1500)
+
     loadYouTubeApi()
       .then((YT) => {
         if (cancelled || !hostRef.current) return
@@ -58,17 +86,16 @@ export default function HeroVideo({ id, title }) {
             disablekb: 1,
             fs: 0,
             loop: 1,
+            // required for loop to apply to a single video
             playlist: id,
             modestbranding: 1,
             playsinline: 1,
             rel: 0,
             iv_load_policy: 3,
+            origin: window.location.origin,
           },
           events: {
-            onReady: (event) => {
-              event.target.mute()
-              event.target.playVideo?.()
-            },
+            onReady: (event) => start(event.target),
             onError: () => setUnavailable(true),
           },
         })
@@ -77,6 +104,8 @@ export default function HeroVideo({ id, title }) {
 
     return () => {
       cancelled = true
+      clearTimeout(retry)
+      gestures.forEach((event) => window.removeEventListener(event, onGesture))
       try {
         playerRef.current?.destroy()
       } catch {

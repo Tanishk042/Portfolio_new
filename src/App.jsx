@@ -8,7 +8,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CopyChip from './components/CopyChip'
 import useSmoothAnchors from './hooks/useSmoothAnchors'
-import { education, experience } from './data/content'
+import { education } from './data/content'
 
 export default function App() {
   useSmoothAnchors()
@@ -21,7 +21,6 @@ export default function App() {
         <Hero />
         <Marquee />
         <Projects />
-        <Timeline id="work" eyebrow="Experience" heading="Where I’ve worked." items={experience} />
         <Timeline id="education" eyebrow="Education" heading="Background." items={education} />
         <About />
         <Contact />
