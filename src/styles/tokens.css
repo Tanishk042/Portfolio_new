@@ -1,0 +1,28 @@
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  --bg: #11100d;
+  --bg-2: #151410;
+  --bg-3: #161511;
+  --sand: #d0c5ab;
+  --sand-80: rgba(208, 197, 171, 0.8);
+  --sand-55: rgba(208, 197, 171, 0.55);
+  --sand-38: rgba(208, 197, 171, 0.38);
+  --line: rgba(208, 197, 171, 0.1);
+  --line-2: rgba(171, 162, 141, 0.1);
+  --ink: rgb(255, 255, 255);
+
+  --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --display: 'Urbanist', 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+  --wrap: 1216px;
+  --gut: 32px;
+  --pill: 50px;
+  --r-sm: 3px;
+  --r-md: 4px;
+  --r-lg: 6px;
+
+  --nav-h: 84px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

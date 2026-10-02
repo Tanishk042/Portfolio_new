@@ -1,0 +1,107 @@
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact {
+  border-top: 1px solid var(--line-2);
+  background: var(--bg-2);
+}
+.contact-in {
+  padding: 96px 0;
+}
+.contact h2 {
+  font-family: var(--display);
+  font-size: 72px;
+  font-weight: 600;
+  letter-spacing: -4px;
+  line-height: 1.02;
+  color: var(--ink);
+  margin-bottom: 24px;
+  max-width: 14ch;
+}
+.contact .sub {
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--sand-55);
+  margin-bottom: 40px;
+  max-width: 52ch;
+}
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 72px;
+}
+.contact-ready {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.copy-list {
+  border-top: 1px solid var(--line-2);
+}
+.copy-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  padding: 26px 4px;
+  border-bottom: 1px solid var(--line-2);
+  text-align: left;
+  transition:
+    padding-left 0.45s var(--ease),
+    background-color 0.35s linear;
+}
+.copy-item:hover {
+  padding-left: 14px;
+  background: rgba(208, 197, 171, 0.02);
+}
+.copy-item .k {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sand-38);
+  margin-bottom: 8px;
+}
+.copy-item .v {
+  display: block;
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  color: var(--ink);
+  line-height: 1.2;
+  word-break: break-word;
+}
+.copy-item .c {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-style: normal;
+  color: var(--sand-38);
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  padding: 9px 14px;
+  transition:
+    color 0.3s var(--ease),
+    border-color 0.3s linear;
+}
+.copy-item .c svg {
+  width: 13px;
+  height: 13px;
+}
+.copy-item:hover .c {
+  color: var(--sand);
+  border-color: rgba(208, 197, 171, 0.3);
+}
+.copy-item.done .c {
+  color: var(--sand);
+  border-color: var(--sand);
+}

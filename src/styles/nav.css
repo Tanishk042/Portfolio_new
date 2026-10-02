@@ -1,0 +1,141 @@
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  position: fixed;
+  inset: 16px 0 auto 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  padding-inline: 16px;
+}
+
+.nav-in {
+  pointer-events: auto;
+  width: 100%;
+  max-width: var(--wrap);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 10px 10px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  background: rgba(17, 16, 13, 0.72);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  transform: translateY(-120%);
+  opacity: 0;
+  transition:
+    transform 0.6s var(--ease),
+    opacity 0.5s var(--ease),
+    background-color 0.3s linear,
+    border-color 0.3s linear;
+}
+.nav.ready .nav-in {
+  transform: none;
+  opacity: 1;
+}
+.nav-in.solid {
+  background: rgba(17, 16, 13, 0.92);
+  border-color: rgba(208, 197, 171, 0.16);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.brand i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sand);
+  flex: none;
+  box-shadow: 0 0 0 0 rgba(208, 197, 171, 0.5);
+  animation: pulse 2.6s var(--ease) infinite;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(208, 197, 171, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(208, 197, 171, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(208, 197, 171, 0);
+  }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-links a {
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sand-55);
+  padding: 9px 14px;
+  border-radius: var(--pill);
+  transition:
+    color 0.3s var(--ease),
+    background-color 0.3s var(--ease);
+}
+.nav-links a:hover {
+  color: var(--ink);
+  background: rgba(208, 197, 171, 0.07);
+}
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.nav-toggle span {
+  display: block;
+  width: 15px;
+  height: 1.5px;
+  background: var(--sand);
+  position: relative;
+  transition: background-color 0.2s linear;
+}
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 15px;
+  height: 1.5px;
+  background: var(--sand);
+  transition: transform 0.4s var(--ease);
+}
+.nav-toggle span::before {
+  top: -5px;
+}
+.nav-toggle span::after {
+  top: 5px;
+}
+.nav-toggle[aria-expanded='true'] span {
+  background: transparent;
+}
+.nav-toggle[aria-expanded='true'] span::before {
+  transform: translateY(5px) rotate(45deg);
+}
+.nav-toggle[aria-expanded='true'] span::after {
+  transform: translateY(-5px) rotate(-45deg);
+}

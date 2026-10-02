@@ -1,0 +1,403 @@
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding: 152px 0 0;
+}
+.hero-eyebrow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+}
+.hero-eyebrow .pill {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sand-55);
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  padding: 8px 14px;
+  line-height: 1;
+}
+
+.hero h1 {
+  font-family: var(--display);
+  font-size: 80px;
+  font-weight: 600;
+  letter-spacing: -4.5px;
+  line-height: 1.02;
+  margin-bottom: 36px;
+  color: var(--ink);
+  max-width: 20ch;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--sand-55);
+  font-weight: 400;
+}
+
+.hero-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sand-55);
+  padding-top: 28px;
+  border-top: 1px solid var(--line-2);
+  margin-bottom: 64px;
+}
+.hero-stat .sq {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sand-38);
+  flex: none;
+}
+
+.scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sand-55);
+  padding-bottom: 72px;
+}
+.scroll-cue i {
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(var(--sand-55), transparent);
+  position: relative;
+  overflow: hidden;
+  flex: none;
+}
+.scroll-cue i::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--sand);
+  animation: cue 2.1s var(--ease) infinite;
+}
+@keyframes cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* ============================================================
+   STATEMENT
+   ============================================================ */
+.statement {
+  font-family: var(--display);
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 1.25;
+  color: var(--sand);
+  max-width: 24ch;
+}
+.statement .b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee {
+  overflow: hidden;
+  border-block: 1px solid var(--line-2);
+  padding: 34px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: slide 46s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes slide {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  padding-right: 56px;
+  flex: none;
+}
+.marquee-group span {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  color: var(--sand-38);
+  white-space: nowrap;
+  transition: color 0.4s var(--ease);
+}
+.marquee-group span:hover {
+  color: var(--sand);
+}
+.marquee-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sand-38);
+  padding: 22px 0 0;
+}
+
+/* ============================================================
+   PROJECT CARDS
+   ============================================================ */
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pcard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: start;
+  padding: 36px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--bg-2);
+  transition:
+    transform 0.5s var(--ease),
+    border-color 0.4s linear,
+    background-color 0.4s linear;
+}
+.pcard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(208, 197, 171, 0.24);
+  background: var(--bg-3);
+}
+.pcard-n {
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--sand-38);
+  line-height: 1;
+  padding-top: 6px;
+}
+.pcard-body {
+  min-width: 0;
+}
+.pcard h3 {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -1.4px;
+  line-height: 1.15;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.pcard .yr {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sand-38);
+}
+.pcard .desc {
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--sand-55);
+  margin-top: 16px;
+  max-width: 62ch;
+}
+.pcard .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 22px;
+}
+.pcard-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  padding-top: 4px;
+}
+.pcard-side .cat {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sand-38);
+  white-space: nowrap;
+}
+.pcard-side .arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.5s var(--ease),
+    background-color 0.4s var(--ease),
+    border-color 0.4s linear;
+}
+.pcard-side .arrow svg {
+  width: 15px;
+  height: 15px;
+  color: var(--sand-55);
+}
+.pcard:hover .arrow {
+  transform: rotate(45deg);
+  background: var(--sand);
+  border-color: var(--sand);
+}
+.pcard:hover .arrow svg {
+  color: var(--bg);
+}
+
+/* ============================================================
+   TIMELINE ROWS (experience / education)
+   ============================================================ */
+.rows {
+  border-top: 1px solid var(--line-2);
+}
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 32px 48px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line-2);
+  transition: background-color 0.4s linear;
+}
+.row:hover {
+  background: rgba(208, 197, 171, 0.02);
+}
+.row-l {
+  min-width: 0;
+}
+.row-l .role {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.row-l .org {
+  font-size: 14px;
+  color: var(--sand-55);
+}
+.row-l .meta {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sand-38);
+  margin-top: 12px;
+}
+.row-r {
+  min-width: 0;
+}
+.row-r li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--sand-55);
+}
+.row-r li + li {
+  margin-top: 11px;
+}
+.row-r li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 5px;
+  height: 1px;
+  background: var(--sand-38);
+}
+.row-r .hl {
+  color: var(--sand);
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px 64px;
+  align-items: start;
+}
+.about-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-block p {
+  font-size: 16px;
+  line-height: 170%;
+  color: var(--sand-55);
+}
+.about-block p + p {
+  margin-top: 14px;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+}
+.skill-row {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line-2);
+}
+.skill-row:last-child {
+  border-bottom: 1px solid var(--line-2);
+}
+.skill-key {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sand-38);
+  padding-top: 3px;
+}
+.skill-val {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.skill-val span {
+  font-size: 13px;
+  line-height: 1;
+  color: var(--sand-80);
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  padding: 8px 13px;
+}
